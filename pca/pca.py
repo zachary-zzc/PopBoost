@@ -49,8 +49,17 @@ def low_cov_pca(vcf, out):
 def normal_pca(vcf, out):
     basename = vcf.replace(".vcf.gz", "").replace(".vcf", "")
     # step 1: convert vcf to eigen format, generate par file
+    commands.append("plink --vcf {} --double-id --recode --out {}".format(vcf, basename))
     with open("convert.par", "w") as ofs:
-        ofs.write()
+        ofs.write("genotypename: {}.ped".format(basename))
+        ofs.write("snpname: {}.map".format(basename))
+        ofs.write("indivname: {}.ind".format(basename))
+        ofs.write("outputformat: EIGENSTRAT")
+        ofs.write("genotypeoutname: {}.geno".format(basename))
+        ofs.write("snpoutname: {}.snp".format(basename))
+        ofs.write("indivoutname: {}.ind".format(basename))
+        ofs.write("familynames: NO")
+    commands.append("convertf -p ped2eigenstrat.par")
     # step 2: run smartpca, generate par file
     with open("pca.par", "w") as ofs:
         ofs.write("genotypename: {}.geno".format(basename))
