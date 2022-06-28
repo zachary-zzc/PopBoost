@@ -1,0 +1,9 @@
+datapath = MergedVaraints
+mcmcpath = <output directory>
+nIndiv = <individual number>
+nSites = <SNP site number>
+nDemes = 200
+diploid = false
+numMCMCIter = 2000000
+numBurIter = 1000000
+numThinIter = 9999
