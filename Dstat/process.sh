@@ -28,7 +28,7 @@ indivname="MergedVariants.ind"
 # ------------------ start to process d-statistics (abba-abab test) --------------------
 outgroup="Mbuti"  # the outgroup population should be specified by the user accordingly
 popfilename="dstat.pop.lst"
-parfilename="dstat.par.par"
+parfilename="dstat.par"
 
 IFS=$'\n' read -d '' -r -a pops < pops.lst
 length=${#pops[@]}
@@ -37,16 +37,16 @@ length=${#pops[@]}
 for (( i=0; i<${length}; i++ )); do
     for (( j=${i}+1; j<${length}; j++ )); do
         for (( k=${j}+1; k<${length}; k++ )); do
-            echo "${pops[$i]}\t${pops[$j]}\t${pops[$k]}\t$outgroup" >> $popfilename
+            echo -e "${pops[$i]}\t${pops[$j]}\t${pops[$k]}\t$outgroup" >> $popfilename
         done
     done
 done
 # generate par file
-echo "genotypename: $genotypename" >> parfilename
-echo "snpname: $snpname" >> parfilename
-echo "indivname: $indivname" >> parfilename
-echo "popfilename: $popfilename" >> parfilename
-echo "f4mode: NO" >> parfilename
+echo "genotypename: $genotypename" >> $parfilename
+echo "snpname: $snpname" >> $parfilename
+echo "indivname: $indivname" >> $parfilename
+echo "popfilename: $popfilename" >> $parfilename
+echo "f4mode: NO" >> $parfilename
 # run dstat by qp
 qpDstat -p $parfilename
 

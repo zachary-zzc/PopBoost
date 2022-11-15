@@ -1,0 +1,29 @@
+PLINK v1.90b4 64-bit (20 Mar 2017)
+Options in effect:
+  --const-fid
+  --make-bed
+  --out SiteEval/MergedVariants
+  --vcf SiteEval/MergedVariants.vcf.gz
+
+Hostname: xiaohui.local
+Working directory: /Users/zachary/Desktop/Workspace/highlander/STAR_Protocols/PopBoost/Demo
+Start time: Tue Oct 18 17:40:44 2022
+
+Random number seed: 1666086044
+16384 MB RAM detected; reserving 8192 MB for main workspace.
+--vcf: SiteEval/MergedVariants-temporary.bed +
+SiteEval/MergedVariants-temporary.bim + SiteEval/MergedVariants-temporary.fam
+written.
+4884 variants loaded from .bim file.
+287 people (0 males, 0 females, 287 ambiguous) loaded from .fam.
+Ambiguous sex IDs written to SiteEval/MergedVariants.nosex .
+Using 1 thread (no multithreaded calculations invoked).
+Before main variant filters, 287 founders and 0 nonfounders present.
+Calculating allele frequencies... done.
+Total genotyping rate is 0.996621.
+4884 variants and 287 people pass filters and QC.
+Note: No phenotypes present.
+--make-bed to SiteEval/MergedVariants.bed + SiteEval/MergedVariants.bim +
+SiteEval/MergedVariants.fam ... done.
+
+End time: Tue Oct 18 17:40:44 2022

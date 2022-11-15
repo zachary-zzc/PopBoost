@@ -1,0 +1,8 @@
+genotypename: SiteEval/MergedVariants.ped
+snpname: SiteEval/MergedVariants.map
+indivname: SiteEval/MergedVariants.ind
+outputformat: EIGENSTRAT
+genotypeoutname: SiteEval/MergedVariants.geno
+snpoutname: SiteEval/MergedVariants.snp
+indivoutname: SiteEval/MergedVariants.ind
+familynames: NO

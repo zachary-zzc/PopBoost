@@ -1,0 +1,62 @@
+KING 2.3.0 - (c) 2010-2022 Wei-Min Chen
+
+The following parameters are in effect:
+                   Binary File : SiteEval/MergedVariants.bed (-bname)
+
+Additional Options
+         Close Relative Inference : --related [ON], --duplicate
+   Pairwise Relatedness Inference : --kinship, --ibdseg, --ibs, --makeGRM
+              Inference Parameter : --degree, --seglength
+         Relationship Application : --unrelated, --cluster, --build
+                        QC Report : --bysample, --bySNP, --roh, --autoQC
+                     QC Parameter : --callrateN, --callrateM
+             Population Structure : --pca, --mds
+              Structure Parameter : --projection, --pcs
+              Disease Association : --tdt
+   Quantitative Trait Association : --lmm
+                Association Model : --trait [], --covariate []
+            Association Parameter : --invnorm
+               Genetic Risk Score : --risk, --model [], --prevalence, --noflip
+              Computing Parameter : --cpus
+                   Optional Input : --fam [SiteEval/MergedVariants.fam],
+                                    --bim [SiteEval/MergedVariants.bim],
+                                    --sexchr [23]
+                           Output : --rplot, --pngplot, --plink
+                 Output Parameter : --prefix [king], --rpath []
+
+KING starts at Tue Oct 18 21:46:42 2022
+Loading genotype data in PLINK binary format...
+Read in PLINK fam file SiteEval/MergedVariants.fam...
+  PLINK pedigrees loaded: 287 samples
+Read in PLINK bim file SiteEval/MergedVariants.bim...
+  Genotype data consist of 4884 autosome SNPs
+  PLINK maps loaded: 4884 SNPs
+Read in PLINK bed file SiteEval/MergedVariants.bed...
+0%6%13%19%25%31%38%44%50%56%63%69%75%81%88%  PLINK binary genotypes loaded.
+94%  KING format genotype data successfully converted.
+Autosome genotypes stored in 77 words for each of 287 individuals.
+
+Options in effect:
+	--related
+
+Sorting autosomes...
+Total length of 1 chromosomal segments usable for IBD segment analysis is 34.1 Mb.
+  Information of these chromosomal segments can be found in file kingallsegs.txt
+
+Segments too short.
+  Inference will be based on kinship estimation only.
+Within-family kinship data saved in file king.kin
+
+Relationship summary (total relatives: 0 by pedigree, 154 by inference)
+  Source	MZ	PO	FS	2nd	3rd	OTHER
+  ===========================================================
+  Pedigree	0	0	0	0	0	41041
+  Inference	0	0	0	1	153	40887
+
+
+WARNING - 
+All individuals with family ID 0 are considered as relatives.
+
+There is only one family.
+KING ends at Tue Oct 18 21:46:43 2022
+

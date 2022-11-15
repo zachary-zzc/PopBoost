@@ -1,0 +1,9 @@
+genotypename: SiteEval/MergedVariants.geno
+snpname: SiteEval/MergedVariants.snp
+indivname: SiteEval/MergedVariants.ind
+evecoutname: pca/MergedVariants.pca.evec
+evaloutname: pca/MergedVariants.pca.eval
+altnormstyle: NO
+numoutevec: 20
+numoutlieriter: 5
+outliersigmathresh: 6.0

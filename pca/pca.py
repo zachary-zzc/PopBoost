@@ -24,6 +24,7 @@ def arg_parser():
         metavar="STR", type=str,
         help="output result"
     )
+    return parser.parse_args()
 
 
 # ----- low coverage mode, process by angsd ---
@@ -47,30 +48,31 @@ def low_cov_pca(vcf, out):
 
 # ----- normal mode, process by smartPCA
 def normal_pca(vcf, out):
+    commands = []
     basename = vcf.replace(".vcf.gz", "").replace(".vcf", "")
     # step 1: convert vcf to eigen format, generate par file
     commands.append("plink --vcf {} --double-id --recode --out {}".format(vcf, basename))
     with open("convert.par", "w") as ofs:
-        ofs.write("genotypename: {}.ped".format(basename))
-        ofs.write("snpname: {}.map".format(basename))
-        ofs.write("indivname: {}.ind".format(basename))
-        ofs.write("outputformat: EIGENSTRAT")
-        ofs.write("genotypeoutname: {}.geno".format(basename))
-        ofs.write("snpoutname: {}.snp".format(basename))
-        ofs.write("indivoutname: {}.ind".format(basename))
-        ofs.write("familynames: NO")
-    commands.append("convertf -p ped2eigenstrat.par")
+        ofs.write("genotypename: {}.ped\n".format(basename))
+        ofs.write("snpname: {}.map\n".format(basename))
+        ofs.write("indivname: {}.ind\n".format(basename))
+        ofs.write("outputformat: EIGENSTRAT\n")
+        ofs.write("genotypeoutname: {}.geno\n".format(basename))
+        ofs.write("snpoutname: {}.snp\n".format(basename))
+        ofs.write("indivoutname: {}.ind\n".format(basename))
+        ofs.write("familynames: NO\n")
+    commands.append("convertf -p convert.par")
     # step 2: run smartpca, generate par file
     with open("pca.par", "w") as ofs:
-        ofs.write("genotypename: {}.geno".format(basename))
-        ofs.write("snpname: {}.snp".format(basename))
-        ofs.write("indivname: {}.ind".format(basename))
-        ofs.write("evecoutname: {}.evec".format(out))
-        ofs.write("evaloutname: {}.eval".format(out))
-        ofs.write("altnormstyle: NO")
-        ofs.write("numoutevec: 20")
-        ofs.write("numoutlieriter: 5")
-        ofs.write("outliersigmathresh: 6.0")
+        ofs.write("genotypename: {}.geno\n".format(basename))
+        ofs.write("snpname: {}.snp\n".format(basename))
+        ofs.write("indivname: {}.ind\n".format(basename))
+        ofs.write("evecoutname: {}.evec\n".format(out))
+        ofs.write("evaloutname: {}.eval\n".format(out))
+        ofs.write("altnormstyle: NO\n")
+        ofs.write("numoutevec: 20\n")
+        ofs.write("numoutlieriter: 5\n")
+        ofs.write("outliersigmathresh: 6.0\n")
     commands.append("smartpca -p pca.par")
     return commands
 

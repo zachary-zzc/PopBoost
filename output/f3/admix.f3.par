@@ -1,0 +1,5 @@
+genotypename: SiteEval/MergedVariants.bed
+snpname: SiteEval/MergedVariants.bim
+indivname: SiteEval/MergedVariants.ind
+popfilename: f3/admix.f3.lst
+outgroupmode: NO

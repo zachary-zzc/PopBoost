@@ -1,0 +1,5 @@
+genotypename: SiteEval/MergedVariants.bed
+snpname: SiteEval/MergedVariants.bim
+indivname: SiteEval/MergedVariants.ind
+popfilename: Dstat/dstat.pop.lst
+f4mode: NO

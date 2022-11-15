@@ -36,15 +36,15 @@ length=${#pops[@]}
 # generate pop file
 for (( i=0; i<${length}; i++ )); do
     for (( j=${i}+1; j<${length}; j++ )); do
-        echo "${pops[$i]}\t${pops[$j]}\t$test" >> $popfilename
+        echo -e "${pops[$i]}\t${pops[$j]}\t$test" >> $popfilename
     done
 done
 # generate par file
-echo "genotypename: $genotypename" >> parfilename
-echo "snpname: $snpname" >> parfilename
-echo "indivname: $indivname" >> parfilename
-echo "popfilename: $popfilename" >> parfilename
-echo "outgroupmode: NO" >> parfilename
+echo "genotypename: $genotypename" >> $parfilename
+echo "snpname: $snpname" >> $parfilename
+echo "indivname: $indivname" >> $parfilename
+echo "popfilename: $popfilename" >> $parfilename
+echo "outgroupmode: NO" >> $parfilename
 # run admixture f3 by qp
 qp3Pop -p $parfilename
 
@@ -59,14 +59,14 @@ length=${#pops[@]}
 # generate pop file
 for (( i=0; i<${length}; i++ )); do
     for (( j=${i}+1; j<${length}; j++ )); do
-        echo "${pops[$i]}\t${pops[$j]}\t$outgroup" >> $popfilename
+        echo -e "${pops[$i]}\t${pops[$j]}\t$outgroup" >> $popfilename
     done
 done
 # generate par file
-echo "genotypename: $genotypename" >> parfilename
-echo "snpname: $snpname" >> parfilename
-echo "indivname: $indivname" >> parfilename
-echo "popfilename: $popfilename" >> parfilename
-echo "outgroupmode: YES" >> parfilename
+echo "genotypename: $genotypename" >> $parfilename
+echo "snpname: $snpname" >> $parfilename
+echo "indivname: $indivname" >> $parfilename
+echo "popfilename: $popfilename" >> $parfilename
+echo "outgroupmode: YES" >> $parfilename
 # run outgroupture f3 by qp
 qp3Pop -p $parfilename

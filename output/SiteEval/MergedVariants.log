@@ -1,0 +1,17 @@
+PLINK v1.90b6.21 64-bit (19 Oct 2020)
+Options in effect:
+  --const-fid
+  --indep-pairwise 500 50 0.2
+  --out MergedVariants
+  --vcf MergedVariants.vcf.gz
+
+Hostname: cn00
+Working directory: /home/zczhao/projects/highlander/protocol/PopBoost/Demo/output
+Start time: Wed Oct 19 02:00:57 2022
+
+Random number seed: 1666116057
+128271 MB RAM detected; reserving 64135 MB for main workspace.
+Error: Failed to open MergedVariants.vcf.gz. (--vcf expects a complete
+filename; did you forget '.vcf' at the end?)
+
+End time: Wed Oct 19 02:00:57 2022

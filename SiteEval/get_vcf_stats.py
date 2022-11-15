@@ -1,6 +1,7 @@
 import os
 import sys
 import subprocess
+import vcf
 from argparse import ArgumentParser, FileType, ArgumentDefaultsHelpFormatter
 
 
@@ -50,6 +51,7 @@ def is_dbsnp(record):
 # ----- batch eval by Rscript -----
 def batch_eval(infile, outprefix, refv):
     cmd = "Rscript batch.ev.R {} {} {}".format(infile, outprefix, refv)
+    print(cmd)
     out = subprocess.run(cmd, shell=True, stdout=subprocess.PIPE)
     return out.stdout.decode("utf-8")
 # ----- batch eval done -----
